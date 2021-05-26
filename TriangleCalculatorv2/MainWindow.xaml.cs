@@ -20,7 +20,7 @@ namespace TriangleCalculatorv2
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int sidea, sideb, sidec;
+        public int sidea, sideb, sidec;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace TriangleCalculatorv2
 
             GuiCalculator guiCalc = new GuiCalculator();
 
-            switch (guiCalc.GuiTriangleCalculator(sidea, sideb, sidec))
+            switch (guiCalc.GuiTriangleCalculator(sidea, sideb, sidec)) //Here we take the input of our Guicalculator class and define which case it should choose from
             {
                 case 1:
                     TriangleDesc.Text = "This is an equilateral triangle.";
