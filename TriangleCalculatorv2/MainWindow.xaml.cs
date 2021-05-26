@@ -20,19 +20,31 @@ namespace TriangleCalculatorv2
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int sidea, sideb, sidec;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender)
-        {
-            
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            TriangleDesc.Text = "hello world";
+            sidea = Convert.ToInt32(Input1.Text);
+            sideb = Convert.ToInt32(Input2.Text);
+            sidec = Convert.ToInt32(Input3.Text);
+            
+            if(sidea==sideb && sideb==sidec)
+            {
+                TriangleDesc.Text = "This is an equilateral triangle.";
+            }  
+            else if(sidea==sideb || sidea==sidec || sideb==sidec) 
+            {
+                TriangleDesc.Text = "This is an isosceles triangle.";
+            }  
+            else 
+            {
+                TriangleDesc.Text = "This is a scalene triangle.";
+            }  
+            
         }
     }
 }
