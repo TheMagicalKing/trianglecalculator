@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This is a simple program made to quickly figure out what kind of triangle you got based on the input you get.
+This is a simple program made to quickly figure out what kind of triangle you got based on the input you have.
 
 ## Potential Tests
 
