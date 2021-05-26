@@ -29,22 +29,24 @@ namespace TriangleCalculatorv2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             sidea = Convert.ToInt32(Input1.Text);
-            sideb = Convert.ToInt32(Input2.Text);
+            sideb = Convert.ToInt32(Input2.Text); //here we convert the inputs to an int in order so the program can properly read it
             sidec = Convert.ToInt32(Input3.Text);
-            
-            if(sidea==sideb && sideb==sidec)
+
+            GuiCalculator guiCalc = new GuiCalculator();
+
+            switch (guiCalc.GuiTriangleCalculator(sidea, sideb, sidec))
             {
-                TriangleDesc.Text = "This is an equilateral triangle.";
-            }  
-            else if(sidea==sideb || sidea==sidec || sideb==sidec) 
-            {
-                TriangleDesc.Text = "This is an isosceles triangle.";
-            }  
-            else 
-            {
-                TriangleDesc.Text = "This is a scalene triangle.";
-            }  
-            
+                case 1:
+                    TriangleDesc.Text = "This is an equilateral triangle.";
+                    break;
+                case 2:
+                    TriangleDesc.Text = "This is an isosceles triangle.";
+                    break;
+                case 3:
+                    TriangleDesc.Text = "This is a scalene triangle.";
+                    break;
+            }
+
         }
     }
 }
